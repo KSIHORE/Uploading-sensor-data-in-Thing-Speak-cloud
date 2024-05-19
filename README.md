@@ -42,7 +42,7 @@ Step7 Check your ThingSpeak channel to verify that the sensor value has been upd
 
 Internet of Things (IoT) describes an emerging trend where a large number of embedded devices (things) are connected to the Internet. These connected devices communicate with people and other things and often provide sensor data to cloud storage and cloud computing resources where the data is processed and analyzed to gain important insights. Cheap cloud computing power and increased device connectivity is enabling this trend.IoT solutions are built for many vertical applications such as environmental monitoring and control, health monitoring, vehicle fleet monitoring, industrial monitoring and control, and home automation
 
-![image](https://user-images.githubusercontent.com/71547910/235334044-c01d4261-d46f-4f62-b07f-72a7b6fce5d5.png)
+<img height=30% width=60% src="https://user-images.githubusercontent.com/71547910/235334044-c01d4261-d46f-4f62-b07f-72a7b6fce5d5.png">
 
 ### Sending Data to Cloud with ESP32 and ThingSpeak
 
@@ -67,14 +67,45 @@ Run your IoT analytics automatically based on schedules or events. </br>
 Prototype and build IoT systems without setting up servers or developing web software.</br>
 Automatically act on your data and communicate using third-party services like Twilio® or Twitter®</br>
 
-![image](https://user-images.githubusercontent.com/71547910/235334056-3ba9579f-2f62-43b1-a714-8fde6cf9ef32.png)
+<img height=30% width=60% src="https://user-images.githubusercontent.com/71547910/235334056-3ba9579f-2f62-43b1-a714-8fde6cf9ef32.png">
 
 
 # PROGRAM:
+```
+NAME:KISHORE.B
+REG NO:212222110020
+```
+```
+const int trigPin = 9;
+const int echoPin = 10;
 
+long duration;
+int distance;
+void setup() {
+pinMode(trigPin, OUTPUT);
+pinMode(echoPin, INPUT);
+Serial.begin(9600);
+}
+
+void loop() 
+{
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  distance= duration*0.034/2;
+  Serial.print("Distance: ");
+  Serial.println(distance);
+}
+```
 # CIRCUIT DIAGRAM:
+<img height=30% width=60% src="https://github.com/KSIHORE/Uploading-sensor-data-in-Thing-Speak-cloud/assets/151484879/41500052-77c3-475e-84ce-b85602194625">
 
 # OUTPUT:
+<img height=30% width=60% src="https://github.com/KSIHORE/Uploading-sensor-data-in-Thing-Speak-cloud/assets/151484879/730fd147-0ac1-4bc6-9188-3a62864784ea">
+
 
 # RESULT:
 
